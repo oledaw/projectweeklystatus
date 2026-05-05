@@ -447,6 +447,95 @@
 
         #risk-list { padding-left: 18px; margin-top: 10px; }
         #risk-list li { margin-bottom: 6px; font-size: 14px; }
+
+        /* ───────── MOBILE FIX ───────── */
+@media (max-width: 640px) {
+
+    body {
+        padding: 20px 14px 60px;
+        font-size: 14px;
+    }
+
+    .page {
+        max-width: 100%;
+    }
+
+    /* HEADER */
+    .masthead {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .week-badge {
+        align-self: flex-start;
+    }
+
+    /* GRIDY → 1 kolumna */
+    .options-grid,
+    .options-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* KARTA KRYTERIUM */
+    .criterion {
+        padding: 16px;
+    }
+
+    .crit-header {
+        flex-wrap: wrap;
+    }
+
+    .crit-weight {
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    /* OPCJE */
+    .opt {
+        padding: 12px;
+    }
+
+    .opt-label {
+        font-size: 13px;
+    }
+
+    /* BUTTONY */
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn-reset {
+        width: 100%;
+    }
+
+    /* RESULT */
+    .result-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .score-badge {
+        margin-left: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .score-number {
+        font-size: 28px;
+    }
+
+    /* PILLS */
+    .result-pills {
+        gap: 6px;
+    }
+
+    /* COMMENT */
+    textarea {
+        font-size: 13px;
+    }
+}
     </style>
 </head>
 
@@ -590,7 +679,7 @@ const CRITERIA = [
         optional: false,
         options: [
             { val: "G", label: "Sprawny",    desc: "Cały skład dostępny i zaangażowany. Realizacja zadań zgodna z harmonogramem." },
-            { val: "A", label: "Napięcia",   desc: "Ograniczona dostępność (urlopy, równoległy projekt) — obsłużone przez PM, bez wpływu na delivery." },
+            { val: "A", label: "Ograniczony",   desc: "Ograniczona dostępność (urlopy, równoległy projekt) — obsłużone przez PM, bez wpływu na delivery." },
             { val: "R", label: "Zagrożony",  desc: "Rotacja na kluczowej roli, brak zastępstwa lub istotne spowolnienie realizacji zadań. Ryzyko niewykonania zobowiązań tygodnia." }
         ]
     },
