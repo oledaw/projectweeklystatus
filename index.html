@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status tygodniowy projektu</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #F5F3EF;
@@ -37,7 +36,11 @@
             --accent-light: #EAF1F7;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -49,7 +52,10 @@
             padding: 40px 20px 80px;
         }
 
-        .page { max-width: 720px; margin: 0 auto; }
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
 
         .masthead {
             margin-bottom: 36px;
@@ -122,10 +128,25 @@
             transition: border-color 0.2s;
         }
 
-        .criterion.selected-G { border-color: var(--green-border); background: var(--green-bg); }
-        .criterion.selected-A { border-color: var(--amber-border); background: var(--amber-bg); }
-        .criterion.selected-R { border-color: var(--red-border);   background: var(--red-bg);   }
-        .criterion.selected-N { border-color: var(--na-border);    background: var(--na-bg);    }
+        .criterion.selected-G {
+            border-color: var(--green-border);
+            background: var(--green-bg);
+        }
+
+        .criterion.selected-A {
+            border-color: var(--amber-border);
+            background: var(--amber-bg);
+        }
+
+        .criterion.selected-R {
+            border-color: var(--red-border);
+            background: var(--red-bg);
+        }
+
+        .criterion.selected-N {
+            border-color: var(--na-border);
+            background: var(--na-bg);
+        }
 
         .crit-header {
             display: flex;
@@ -174,8 +195,17 @@
             align-self: center;
         }
 
-        .options-grid   { display: grid; grid-template-columns: 1fr 1fr 1fr;     gap: 8px; }
-        .options-grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; }
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+
+        .options-grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 8px;
+        }
 
         .opt {
             border: 1px solid var(--border2);
@@ -187,30 +217,101 @@
             text-align: left;
         }
 
-        .opt:hover { background: var(--surface2); }
+        .opt:hover {
+            background: var(--surface2);
+        }
 
-        .opt.active-G { border-color: var(--green-border); background: var(--green-bg); }
-        .opt.active-A { border-color: var(--amber-border); background: var(--amber-bg); }
-        .opt.active-R { border-color: var(--red-border);   background: var(--red-bg);   }
-        .opt.active-N { border-color: var(--na-border);    background: var(--na-bg);    }
+        .opt.active-G {
+            border-color: var(--green-border);
+            background: var(--green-bg);
+        }
 
-        .opt-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 8px; }
-        .dot-G { background: var(--green-mid); }
-        .dot-A { background: var(--amber-mid); }
-        .dot-R { background: var(--red-mid);   }
-        .dot-N { background: var(--na-mid);    }
+        .opt.active-A {
+            border-color: var(--amber-border);
+            background: var(--amber-bg);
+        }
 
-        .opt-label { font-size: 12px; font-weight: 500; margin-bottom: 4px; }
-        .label-G { color: var(--green-text); }
-        .label-A { color: var(--amber-text); }
-        .label-R { color: var(--red-text);   }
-        .label-N { color: var(--na-text);    }
+        .opt.active-R {
+            border-color: var(--red-border);
+            background: var(--red-bg);
+        }
 
-        .opt-desc { font-size: 11.5px; line-height: 1.5; color: var(--text-muted); font-weight: 300; }
-        .opt.active-G .opt-desc { color: var(--green-text); opacity: 0.8; }
-        .opt.active-A .opt-desc { color: var(--amber-text); opacity: 0.8; }
-        .opt.active-R .opt-desc { color: var(--red-text);   opacity: 0.8; }
-        .opt.active-N .opt-desc { color: var(--na-text);    opacity: 0.8; }
+        .opt.active-N {
+            border-color: var(--na-border);
+            background: var(--na-bg);
+        }
+
+        .opt-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+
+        .dot-G {
+            background: var(--green-mid);
+        }
+
+        .dot-A {
+            background: var(--amber-mid);
+        }
+
+        .dot-R {
+            background: var(--red-mid);
+        }
+
+        .dot-N {
+            background: var(--na-mid);
+        }
+
+        .opt-label {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .label-G {
+            color: var(--green-text);
+        }
+
+        .label-A {
+            color: var(--amber-text);
+        }
+
+        .label-R {
+            color: var(--red-text);
+        }
+
+        .label-N {
+            color: var(--na-text);
+        }
+
+        .opt-desc {
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .opt.active-G .opt-desc {
+            color: var(--green-text);
+            opacity: 0.8;
+        }
+
+        .opt.active-A .opt-desc {
+            color: var(--amber-text);
+            opacity: 0.8;
+        }
+
+        .opt.active-R .opt-desc {
+            color: var(--red-text);
+            opacity: 0.8;
+        }
+
+        .opt.active-N .opt-desc {
+            color: var(--na-text);
+            opacity: 0.8;
+        }
 
         .comment-wrap {
             background: var(--surface);
@@ -241,13 +342,15 @@
             font-size: 11px;
             font-weight: 500;
             color: var(--red-text);
-            background: rgba(212,80,80,0.12);
+            background: rgba(212, 80, 80, 0.12);
             border-radius: 20px;
             padding: 2px 8px;
             margin-left: 8px;
         }
 
-        .comment-required-badge.visible { display: inline; }
+        .comment-required-badge.visible {
+            display: inline;
+        }
 
         textarea {
             width: 100%;
@@ -265,8 +368,13 @@
             font-weight: 300;
         }
 
-        textarea:focus { border-color: var(--accent); }
-        textarea::placeholder { color: var(--text-hint); }
+        textarea:focus {
+            border-color: var(--accent);
+        }
+
+        textarea::placeholder {
+            color: var(--text-hint);
+        }
 
         /* Error message under textarea */
         .comment-error-msg {
@@ -276,9 +384,15 @@
             display: none;
         }
 
-        .comment-error-msg.visible { display: block; }
+        .comment-error-msg.visible {
+            display: block;
+        }
 
-        .actions { display: flex; gap: 10px; margin-bottom: 8px; }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
 
         .btn-calc {
             flex: 1;
@@ -295,7 +409,9 @@
             transition: opacity 0.15s;
         }
 
-        .btn-calc:hover { opacity: 0.85; }
+        .btn-calc:hover {
+            opacity: 0.85;
+        }
 
         .btn-reset {
             padding: 13px 18px;
@@ -309,7 +425,9 @@
             transition: all 0.15s;
         }
 
-        .btn-reset:hover { background: var(--surface2); }
+        .btn-reset:hover {
+            background: var(--surface2);
+        }
 
         .validation-msg {
             font-size: 12px;
@@ -328,11 +446,20 @@
             animation: fadeIn 0.3s ease;
         }
 
-        .result-card.visible { display: block; }
+        .result-card.visible {
+            display: block;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to   { opacity: 1; transform: translateY(0);   }
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .result-top {
@@ -392,7 +519,7 @@
         .score-bar-wrap {
             height: 4px;
             border-radius: 2px;
-            background: rgba(0,0,0,0.1);
+            background: rgba(0, 0, 0, 0.1);
             margin-top: 6px;
             overflow: hidden;
         }
@@ -420,16 +547,43 @@
             font-weight: 500;
         }
 
-        .pill-dot { width: 7px; height: 7px; border-radius: 50%; }
+        .pill-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
 
-        .pill-G { background: rgba(107,181,96,0.15);  color: var(--green-text); }
-        .pill-A { background: rgba(224,154,58,0.15);  color: var(--amber-text); }
-        .pill-R { background: rgba(212,80,80,0.15);   color: var(--red-text);   }
-        .pill-N { background: rgba(158,152,144,0.15); color: var(--na-text);    }
+        .pill-G {
+            background: rgba(107, 181, 96, 0.15);
+            color: var(--green-text);
+        }
 
-        .result-divider { height: 1px; margin-bottom: 18px; opacity: 0.25; }
+        .pill-A {
+            background: rgba(224, 154, 58, 0.15);
+            color: var(--amber-text);
+        }
 
-        .result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .pill-R {
+            background: rgba(212, 80, 80, 0.15);
+            color: var(--red-text);
+        }
+
+        .pill-N {
+            background: rgba(158, 152, 144, 0.15);
+            color: var(--na-text);
+        }
+
+        .result-divider {
+            height: 1px;
+            margin-bottom: 18px;
+            opacity: 0.25;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
         .btn-copy {
             padding: 10px 18px;
@@ -443,303 +597,472 @@
             transition: opacity 0.15s;
         }
 
-        .btn-copy:hover { opacity: 0.7; }
+        .btn-copy:hover {
+            opacity: 0.7;
+        }
 
-        #risk-list { padding-left: 18px; margin-top: 10px; }
-        #risk-list li { margin-bottom: 6px; font-size: 14px; }
+        #risk-list {
+            padding-left: 18px;
+            margin-top: 10px;
+        }
+
+        #risk-list li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
 
         /* ───────── MOBILE FIX ───────── */
-@media (max-width: 640px) {
+        @media (max-width: 640px) {
 
-    body {
-        padding: 20px 14px 60px;
-        font-size: 14px;
-    }
+            body {
+                padding: 20px 14px 60px;
+                font-size: 14px;
+            }
 
-    .page {
-        max-width: 100%;
-    }
+            .page {
+                max-width: 100%;
+            }
 
-    /* HEADER */
-    .masthead {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
+            /* HEADER */
+            .masthead {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
 
-    .week-badge {
-        align-self: flex-start;
-    }
+            .week-badge {
+                align-self: flex-start;
+            }
 
-    /* GRIDY → 1 kolumna */
-    .options-grid,
-    .options-grid-4 {
-        grid-template-columns: 1fr;
-    }
+            /* GRIDY → 1 kolumna */
+            .options-grid,
+            .options-grid-4 {
+                grid-template-columns: 1fr;
+            }
 
-    /* KARTA KRYTERIUM */
-    .criterion {
-        padding: 16px;
-    }
+            /* KARTA KRYTERIUM */
+            .criterion {
+                padding: 16px;
+            }
 
-    .crit-header {
-        flex-wrap: wrap;
-    }
+            .crit-header {
+                flex-wrap: wrap;
+            }
 
-    .crit-weight {
-        margin-left: 0;
-        margin-top: 6px;
-    }
+            .crit-weight {
+                margin-left: 0;
+                margin-top: 6px;
+            }
 
-    /* OPCJE */
-    .opt {
-        padding: 12px;
-    }
+            /* OPCJE */
+            .opt {
+                padding: 12px;
+            }
 
-    .opt-label {
-        font-size: 13px;
-    }
+            .opt-label {
+                font-size: 13px;
+            }
 
-    /* BUTTONY */
-    .actions {
-        flex-direction: column;
-    }
+            /* BUTTONY */
+            .actions {
+                flex-direction: column;
+            }
 
-    .btn-reset {
-        width: 100%;
-    }
+            .btn-reset {
+                width: 100%;
+            }
 
-    /* RESULT */
-    .result-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
+            /* RESULT */
+            .result-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
 
-    .score-badge {
-        margin-left: 0;
-        width: 100%;
-        text-align: left;
-    }
+            .score-badge {
+                margin-left: 0;
+                width: 100%;
+                text-align: left;
+            }
 
-    .score-number {
-        font-size: 28px;
-    }
+            .score-number {
+                font-size: 28px;
+            }
 
-    /* PILLS */
-    .result-pills {
-        gap: 6px;
-    }
+            /* PILLS */
+            .result-pills {
+                gap: 6px;
+            }
 
-    /* COMMENT */
-    textarea {
-        font-size: 13px;
-    }
-}
+            /* COMMENT */
+            textarea {
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 
 <body>
-<div class="page">
+    <div class="page">
 
-    <div class="masthead">
-        <div class="masthead-left">
-            <h1>Status tygodniowy projektu</h1>
-            <p>Wypełnij przed Portfolio Meeting — oceniaj obiektywnie</p>
-        </div>
-        <div class="week-badge" id="week-badge">—</div>
-    </div>
-
-    <div class="progress-track">
-        <div class="progress-fill" id="progress-fill"></div>
-    </div>
-
-    <div class="section-title">Kryteria oceny</div>
-    <div id="criteria-container"></div>
-
-    <div class="section-title">Komentarz PM</div>
-    <div class="comment-wrap" id="comment-wrap">
-        <label for="pm-comment">
-            Kluczowe ustalenia, blokery, decyzje wymagające eskalacji
-            <span class="comment-required-badge" id="comment-required-badge">⚠ Wymagany przy statusie ZAGROŻONY</span>
-        </label>
-        <textarea id="pm-comment"
-            placeholder="np. Opóźnienie w dostarczeniu danych przez klienta wpływa na harmonogram. Zaplanowano spotkanie eskalacyjne na wtorek..."></textarea>
-        <div class="comment-error-msg" id="comment-error-msg">
-            Komentarz PM jest wymagany gdy status projektu to 🔴 ZAGROŻONY — opisz przyczynę i plan działania.
-        </div>
-    </div>
-
-    <div class="actions">
-        <button class="btn-calc" onclick="calculate()">Oblicz status projektu</button>
-        <button class="btn-reset" onclick="resetAll()">Reset</button>
-    </div>
-    <div class="validation-msg" id="val-msg">Uzupełnij wszystkie wymagane kryteria przed obliczeniem statusu.</div>
-
-    <div class="result-card" id="result-card">
-        <div class="result-top">
-            <div class="result-circle" id="res-circle"></div>
-            <div>
-                <div class="result-title" id="res-title"></div>
-                <div class="result-sub"   id="res-sub"></div>
+        <div class="masthead">
+            <div class="masthead-left">
+                <h1>Status tygodniowy projektu</h1>
+                <p>Wypełnij przed Portfolio Meeting — oceniaj obiektywnie</p>
             </div>
-            <div class="score-badge" id="score-badge">
-                <div class="score-number" id="score-number"></div>
-                <div class="score-label"  id="score-label">/ 100</div>
-                <div class="score-bar-wrap">
-                    <div class="score-bar-fill" id="score-bar-fill"></div>
+            <div class="week-badge" id="week-badge">—</div>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="section-title">Kryteria oceny</div>
+        <div id="criteria-container"></div>
+
+        <div class="section-title">Komentarz PM</div>
+        <div class="comment-wrap" id="comment-wrap">
+            <label for="pm-comment">
+                Kluczowe ustalenia, blokery, decyzje wymagające eskalacji
+                <span class="comment-required-badge" id="comment-required-badge">⚠ Wymagany przy statusie ZAGROŻONY</span>
+            </label>
+            <textarea id="pm-comment" placeholder="np. Opóźnienie w dostarczeniu danych przez klienta wpływa na harmonogram. Zaplanowano spotkanie eskalacyjne na wtorek..."></textarea>
+            <div class="comment-error-msg" id="comment-error-msg">
+                Komentarz PM jest wymagany gdy status projektu to 🔴 ZAGROŻONY — opisz przyczynę i plan działania.
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-calc" onclick="calculate()">Oblicz status projektu</button>
+            <button class="btn-reset" onclick="resetAll()">Reset</button>
+        </div>
+        <div class="validation-msg" id="val-msg">Uzupełnij wszystkie wymagane kryteria przed obliczeniem statusu.</div>
+
+        <div class="result-card" id="result-card">
+            <div class="result-top">
+                <div class="result-circle" id="res-circle"></div>
+                <div>
+                    <div class="result-title" id="res-title"></div>
+                    <div class="result-sub" id="res-sub"></div>
+                </div>
+                <div class="score-badge" id="score-badge">
+                    <div class="score-number" id="score-number"></div>
+                    <div class="score-label" id="score-label">/ 100</div>
+                    <div class="score-bar-wrap">
+                        <div class="score-bar-fill" id="score-bar-fill"></div>
+                    </div>
                 </div>
             </div>
+            <div class="result-pills" id="res-pills"></div>
+            <div class="result-divider" id="res-div"></div>
+            <div class="result-actions">
+                <button class="btn-copy" id="btn-copy" onclick="copyReport()">Kopiuj raport do schowka</button>
+                <button class="btn-copy" id="btn-copy-json" onclick="copyJSONReport()">
+                    Kopiuj JSON
+                </button>
+            </div>
+            <div class="section-title">Ryzyka do dodania do risk log</div>
+            <ul id="risk-list"></ul>
         </div>
-        <div class="result-pills"   id="res-pills"></div>
-        <div class="result-divider" id="res-div"></div>
-        <div class="result-actions">
-            <button class="btn-copy" id="btn-copy" onclick="copyReport()">Kopiuj raport do schowka</button>
-        </div>
-        <div class="section-title">Ryzyka do dodania do risk log</div>
-        <ul id="risk-list"></ul>
+
     </div>
+    <script>
+        /* ─── Priority labels ───────────────────────────────────────────── */
 
-</div>
-<script>
-/* ─── Priority labels ───────────────────────────────────────────── */
+        const PRIORITY_LABELS = {
+            timeline: "🕒 Przesuwa termin",
+            quality: "🎯 Psuje rezultat",
+            blocker: "⛔ Zatrzyma projekt"
+        };
 
-const PRIORITY_LABELS = {
-    timeline: "🕒 Przesuwa termin",
-    quality:  "🎯 Psuje rezultat",
-    blocker:  "⛔ Zatrzyma projekt"
-};
+        /* ─── Risk suggestions (unchanged) ─────────────────────────────── */
 
-/* ─── Risk suggestions (unchanged) ─────────────────────────────── */
+        const RISK_SUGGESTIONS = {
+            progress: {
+                A: [{
+                    risk: "Ryzyko dalszego opóźnienia harmonogramu",
+                    impact: "Kumulacja zaległości i presja na kolejne etapy",
+                    mitigation: "Replanowanie zakresu tygodnia + weryfikacja estymacji",
+                    priority: "timeline"
+                }],
+                R: [{
+                        risk: "Ryzyko niedotrzymania terminu końcowego projektu",
+                        impact: "Opóźnienie delivery i potencjalne kary umowne",
+                        mitigation: "Rebaseline harmonogramu + plan recovery",
+                        priority: "timeline"
+                    },
+                    {
+                        risk: "Ryzyko przeciążenia zespołu",
+                        impact: "Spadek jakości i wypalenie zespołu",
+                        mitigation: "Redukcja scope lub zwiększenie capacity",
+                        priority: "quality"
+                    }
+                ]
+            },
+            scope: {
+                A: [{
+                    risk: "Ryzyko zwiększenia zakresu",
+                    impact: "Rozciągnięcie harmonogramu",
+                    mitigation: "Ścisła kontrola change requestów",
+                    priority: "timeline"
+                }],
+                R: [{
+                    risk: "Ryzyko scope creep",
+                    impact: "Utrata kontroli nad projektem",
+                    mitigation: "Formalny change control + akceptacja sponsora",
+                    priority: "blocker"
+                }]
+            },
+            risks: {
+                A: [{
+                    risk: "Ryzyko materializacji ryzyk wysokich",
+                    impact: "Zakłócenie harmonogramu",
+                    mitigation: "Aktywne działania mitigacyjne",
+                    priority: "timeline"
+                }],
+                R: [{
+                    risk: "Ryzyko eskalacji problemów",
+                    impact: "Efekt domina w projekcie",
+                    mitigation: "Plan awaryjny + eskalacja",
+                    priority: "blocker"
+                }]
+            },
+            team: {
+                A: [{
+                    risk: "Ryzyko spadku tempa prac",
+                    impact: "Opóźnienia w realizacji zadań",
+                    mitigation: "Wsparcie zespołu + usunięcie blockerów",
+                    priority: "timeline"
+                }],
+                R: [{
+                    risk: "Ryzyko utraty kluczowych kompetencji",
+                    impact: "Zatrzymanie prac",
+                    mitigation: "Zabezpieczenie zastępstw / backupów",
+                    priority: "blocker"
+                }]
+            },
+            stakeholders: {
+                A: [{
+                    risk: "Ryzyko opóźnień decyzyjnych",
+                    impact: "Blokady w realizacji zadań",
+                    mitigation: "Częstsze checkpointy i przypomnienia",
+                    priority: "timeline"
+                }],
+                R: [{
+                    risk: "Ryzyko blokady decyzyjnej",
+                    impact: "Zatrzymanie projektu",
+                    mitigation: "Eskalacja do sponsora",
+                    priority: "blocker"
+                }]
+            },
+            quality: {
+                A: [{
+                    risk: "Ryzyko narastającego długu technicznego",
+                    impact: "Spadek jakości w przyszłości",
+                    mitigation: "Plan spłaty długu technicznego",
+                    priority: "quality"
+                }],
+                R: [{
+                    risk: "Ryzyko krytycznych błędów blokujących odbiór",
+                    impact: "Blokada release lub odbioru",
+                    mitigation: "Priorytetyzacja naprawy błędów krytycznych",
+                    priority: "blocker"
+                }]
+            }
+        };
 
-const RISK_SUGGESTIONS = {
-    progress: {
-        A: [{ risk: "Ryzyko dalszego opóźnienia harmonogramu", impact: "Kumulacja zaległości i presja na kolejne etapy", mitigation: "Replanowanie zakresu tygodnia + weryfikacja estymacji", priority: "timeline" }],
-        R: [{ risk: "Ryzyko niedotrzymania terminu końcowego projektu", impact: "Opóźnienie delivery i potencjalne kary umowne", mitigation: "Rebaseline harmonogramu + plan recovery", priority: "timeline" },
-            { risk: "Ryzyko przeciążenia zespołu", impact: "Spadek jakości i wypalenie zespołu", mitigation: "Redukcja scope lub zwiększenie capacity", priority: "quality" }]
-    },
-    scope: {
-        A: [{ risk: "Ryzyko zwiększenia zakresu", impact: "Rozciągnięcie harmonogramu", mitigation: "Ścisła kontrola change requestów", priority: "timeline" }],
-        R: [{ risk: "Ryzyko scope creep", impact: "Utrata kontroli nad projektem", mitigation: "Formalny change control + akceptacja sponsora", priority: "blocker" }]
-    },
-    risks: {
-        A: [{ risk: "Ryzyko materializacji ryzyk wysokich", impact: "Zakłócenie harmonogramu", mitigation: "Aktywne działania mitigacyjne", priority: "timeline" }],
-        R: [{ risk: "Ryzyko eskalacji problemów", impact: "Efekt domina w projekcie", mitigation: "Plan awaryjny + eskalacja", priority: "blocker" }]
-    },
-    team: {
-        A: [{ risk: "Ryzyko spadku tempa prac", impact: "Opóźnienia w realizacji zadań", mitigation: "Wsparcie zespołu + usunięcie blockerów", priority: "timeline" }],
-        R: [{ risk: "Ryzyko utraty kluczowych kompetencji", impact: "Zatrzymanie prac", mitigation: "Zabezpieczenie zastępstw / backupów", priority: "blocker" }]
-    },
-    stakeholders: {
-        A: [{ risk: "Ryzyko opóźnień decyzyjnych", impact: "Blokady w realizacji zadań", mitigation: "Częstsze checkpointy i przypomnienia", priority: "timeline" }],
-        R: [{ risk: "Ryzyko blokady decyzyjnej", impact: "Zatrzymanie projektu", mitigation: "Eskalacja do sponsora", priority: "blocker" }]
-    },
-    quality: {
-        A: [{ risk: "Ryzyko narastającego długu technicznego", impact: "Spadek jakości w przyszłości", mitigation: "Plan spłaty długu technicznego", priority: "quality" }],
-        R: [{ risk: "Ryzyko krytycznych błędów blokujących odbiór", impact: "Blokada release lub odbioru", mitigation: "Priorytetyzacja naprawy błędów krytycznych", priority: "blocker" }]
-    }
-};
+        /* ─── Criteria — now with weight property ───────────────────────── */
 
-/* ─── Criteria — now with weight property ───────────────────────── */
+        const CRITERIA = [{
+                id: "progress",
+                name: "Postęp prac",
+                icon: "📋",
+                weight: 0.30,
+                /* 30% — bezpośredni wpływ na termin */
+                optional: false,
+                options: [{
+                        val: "G",
+                        label: "On Track",
+                        desc: "Zadania realizowane zgodnie z harmonogramem. Brak odchyleń wymagających uwagi."
+                    },
+                    {
+                        val: "A",
+                        label: "Chwilowe spowolnienie",
+                        desc: "Odchylenie do 1 tygodnia — zidentyfikowane, nie zagraża dacie końcowej."
+                    },
+                    {
+                        val: "R",
+                        label: "Zagrożony",
+                        desc: "Odchylenie powyżej 2 tygodni. Termin końcowy projektu realnie zagrożony."
+                    }
+                ]
+            },
+            {
+                id: "scope",
+                name: "Zakres (Scope)",
+                icon: "🗂",
+                weight: 0.20,
+                /* 20% — scope creep zabija projekty po cichu */
+                optional: false,
+                options: [{
+                        val: "G",
+                        label: "Stabilny",
+                        desc: "Zakres projektu jasno zdefiniowany i niezmieniany."
+                    },
+                    {
+                        val: "A",
+                        label: "Pod kontrolą",
+                        desc: "Pojawiły się change requesty, ale przeszły formalny proces i zmieścił się w buforze."
+                    },
+                    {
+                        val: "R",
+                        label: "Pełzający",
+                        desc: "Zakres rozszerza się bez formalnej kontroli (scope creep). Zmiany zagrażają harmonogramowi."
+                    }
+                ]
+            },
+            {
+                id: "risks",
+                name: "Ryzyka",
+                icon: "⚠️",
+                weight: 0.20,
+                /* 20% — wyprzedzające ostrzeżenie */
+                optional: false,
+                options: [{
+                        val: "G",
+                        label: "Pod kontrolą",
+                        desc: "Rejestr ryzyk aktualny. Brak ryzyk o krytycznym wpływie. Żadne ryzyko się nie zmaterializowało."
+                    },
+                    {
+                        val: "A",
+                        label: "Monitorowane",
+                        desc: "Istnieją ryzyka o wpływie średnim lub wysokim. Działania mitigacyjne wdrożone lub zaplanowane na ten tydzień."
+                    },
+                    {
+                        val: "R",
+                        label: "Zmaterializowane",
+                        desc: "Co najmniej jedno ryzyko stało się problemem. Projekt odczuwa realny wpływ: opóźnienie, utrata zakresu."
+                    }
+                ]
+            },
+            {
+                id: "team",
+                name: "Zespół",
+                icon: "👥",
+                weight: 0.15,
+                /* 15% — PM ma narzędzia do szybkiej reakcji */
+                optional: false,
+                options: [{
+                        val: "G",
+                        label: "Sprawny",
+                        desc: "Cały skład dostępny i zaangażowany. Realizacja zadań zgodna z harmonogramem."
+                    },
+                    {
+                        val: "A",
+                        label: "Ograniczony",
+                        desc: "Ograniczona dostępność (urlopy, równoległy projekt) — obsłużone przez PM, bez wpływu na delivery."
+                    },
+                    {
+                        val: "R",
+                        label: "Zagrożony",
+                        desc: "Rotacja na kluczowej roli, brak zastępstwa lub istotne spowolnienie realizacji zadań. Ryzyko niewykonania zobowiązań tygodnia."
+                    }
+                ]
+            },
+            {
+                id: "stakeholders",
+                name: "Interesariusze",
+                icon: "🤝",
+                weight: 0.10,
+                /* 10% — wolne decyzje bolą, ale rzadko same zatrzymują projekt */
+                optional: false,
+                options: [{
+                        val: "G",
+                        label: "Zaangażowani",
+                        desc: "Decyzje podejmowane w ustalonych oknach czasowych. Sponsor aktywnie odpowiada na prośby PM w ciągu 24h."
+                    },
+                    {
+                        val: "A",
+                        label: "Sporadyczne luki",
+                        desc: "Opóźnienia w decyzjach do 2–3 dni. Dostępność ograniczona, ale nie blokuje bieżących prac."
+                    },
+                    {
+                        val: "R",
+                        label: "Blokada",
+                        desc: "Brak decyzji > 3 dni lub decyzja krytyczna cofnięta. Eskalacja już wdrożona lub wymagana natychmiast."
+                    }
+                ]
+            },
+            {
+                id: "quality",
+                name: "Jakość",
+                icon: "✅",
+                weight: 0.05,
+                /* 5% — opcjonalne + późna faza projektu */
+                optional: true,
+                hint: "Pomiń (N/D) jeśli projekt jest w fazie dev przed wejściem QA",
+                options: [{
+                        val: "G",
+                        label: "Wysoka",
+                        desc: "Brak otwartych błędów blokujących. Jakość akceptowana przez QA lub odbiorcę."
+                    },
+                    {
+                        val: "A",
+                        label: "Dopuszczalna",
+                        desc: "Powtarzające się drobne błędy lub 1 istotny błąd z planem naprawczym w bieżącym tygodniu."
+                    },
+                    {
+                        val: "R",
+                        label: "Krytyczna",
+                        desc: "Błąd krytyczny bez planu naprawczego lub jakość blokuje postęp i uniemożliwia odbiór."
+                    },
+                    {
+                        val: "N",
+                        label: "Nie dotyczy",
+                        desc: "QA jeszcze nie weszło — kryterium wykluczone z obliczeń."
+                    }
+                ]
+            }
+        ];
 
-const CRITERIA = [
-    {
-        id: "progress", name: "Postęp prac", icon: "📋",
-        weight: 0.30,   /* 30% — bezpośredni wpływ na termin */
-        optional: false,
-        options: [
-            { val: "G", label: "On Track",     desc: "Zadania realizowane zgodnie z harmonogramem. Brak odchyleń wymagających uwagi." },
-            { val: "A", label: "Chwilowe spowolnienie",  desc: "Odchylenie do 1 tygodnia — zidentyfikowane, nie zagraża dacie końcowej." },
-            { val: "R", label: "Zagrożony",    desc: "Odchylenie powyżej 2 tygodni. Termin końcowy projektu realnie zagrożony." }
-        ]
-    },
-    {
-        id: "scope", name: "Zakres (Scope)", icon: "🗂",
-        weight: 0.20,   /* 20% — scope creep zabija projekty po cichu */
-        optional: false,
-        options: [
-            { val: "G", label: "Stabilny",      desc: "Zakres projektu jasno zdefiniowany i niezmieniany." },
-            { val: "A", label: "Pod kontrolą",  desc: "Pojawiły się change requesty, ale przeszły formalny proces i zmieścił się w buforze." },
-            { val: "R", label: "Pełzający",     desc: "Zakres rozszerza się bez formalnej kontroli (scope creep). Zmiany zagrażają harmonogramowi." }
-        ]
-    },
-    {
-        id: "risks", name: "Ryzyka", icon: "⚠️",
-        weight: 0.20,   /* 20% — wyprzedzające ostrzeżenie */
-        optional: false,
-        options: [
-            { val: "G", label: "Pod kontrolą",    desc: "Rejestr ryzyk aktualny. Brak ryzyk o krytycznym wpływie. Żadne ryzyko się nie zmaterializowało." },
-            { val: "A", label: "Monitorowane",    desc: "Istnieją ryzyka o wpływie średnim lub wysokim. Działania mitigacyjne wdrożone lub zaplanowane na ten tydzień." },
-            { val: "R", label: "Zmaterializowane",desc: "Co najmniej jedno ryzyko stało się problemem. Projekt odczuwa realny wpływ: opóźnienie, utrata zakresu." }
-        ]
-    },
-    {
-        id: "team", name: "Zespół", icon: "👥",
-        weight: 0.15,   /* 15% — PM ma narzędzia do szybkiej reakcji */
-        optional: false,
-        options: [
-            { val: "G", label: "Sprawny",    desc: "Cały skład dostępny i zaangażowany. Realizacja zadań zgodna z harmonogramem." },
-            { val: "A", label: "Ograniczony",   desc: "Ograniczona dostępność (urlopy, równoległy projekt) — obsłużone przez PM, bez wpływu na delivery." },
-            { val: "R", label: "Zagrożony",  desc: "Rotacja na kluczowej roli, brak zastępstwa lub istotne spowolnienie realizacji zadań. Ryzyko niewykonania zobowiązań tygodnia." }
-        ]
-    },
-    {
-        id: "stakeholders", name: "Interesariusze", icon: "🤝",
-        weight: 0.10,   /* 10% — wolne decyzje bolą, ale rzadko same zatrzymują projekt */
-        optional: false,
-        options: [
-            { val: "G", label: "Zaangażowani",      desc: "Decyzje podejmowane w ustalonych oknach czasowych. Sponsor aktywnie odpowiada na prośby PM w ciągu 24h." },
-            { val: "A", label: "Sporadyczne luki",  desc: "Opóźnienia w decyzjach do 2–3 dni. Dostępność ograniczona, ale nie blokuje bieżących prac." },
-            { val: "R", label: "Blokada",           desc: "Brak decyzji > 3 dni lub decyzja krytyczna cofnięta. Eskalacja już wdrożona lub wymagana natychmiast." }
-        ]
-    },
-    {
-        id: "quality", name: "Jakość", icon: "✅",
-        weight: 0.05,   /* 5% — opcjonalne + późna faza projektu */
-        optional: true,
-        hint: "Pomiń (N/D) jeśli projekt jest w fazie dev przed wejściem QA",
-        options: [
-            { val: "G", label: "Wysoka",       desc: "Brak otwartych błędów blokujących. Jakość akceptowana przez QA lub odbiorcę." },
-            { val: "A", label: "Dopuszczalna", desc: "Powtarzające się drobne błędy lub 1 istotny błąd z planem naprawczym w bieżącym tygodniu." },
-            { val: "R", label: "Krytyczna",    desc: "Błąd krytyczny bez planu naprawczego lub jakość blokuje postęp i uniemożliwia odbiór." },
-            { val: "N", label: "Nie dotyczy",  desc: "QA jeszcze nie weszło — kryterium wykluczone z obliczeń." }
-        ]
-    }
-];
+        /* ─── State ─────────────────────────────────────────────────────── */
 
-/* ─── State ─────────────────────────────────────────────────────── */
+        const state = {};
+        CRITERIA.forEach(c => {
+            state[c.id] = null;
+        });
 
-const state = {};
-CRITERIA.forEach(c => { state[c.id] = null; });
+        /* ─── Week label ────────────────────────────────────────────────── */
 
-/* ─── Week label ────────────────────────────────────────────────── */
+        function getWeekLabel() {
+            const now = new Date();
+            const mon = new Date(now);
+            mon.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+            const fri = new Date(mon);
+            fri.setDate(mon.getDate() + 4);
+            const f = d => d.toLocaleDateString("pl-PL", {
+                day: "numeric",
+                month: "short"
+            });
+            return `Tydzień ${f(mon)} – ${f(fri)} ${fri.getFullYear()}`;
+        }
 
-function getWeekLabel() {
-    const now = new Date();
-    const mon = new Date(now);
-    mon.setDate(now.getDate() - ((now.getDay() + 6) % 7));
-    const fri = new Date(mon);
-    fri.setDate(mon.getDate() + 4);
-    const f = d => d.toLocaleDateString("pl-PL", { day: "numeric", month: "short" });
-    return `Tydzień ${f(mon)} – ${f(fri)} ${fri.getFullYear()}`;
-}
+        document.getElementById("week-badge").textContent = getWeekLabel();
 
-document.getElementById("week-badge").textContent = getWeekLabel();
+        /* ─── Build UI ──────────────────────────────────────────────────── */
 
-/* ─── Build UI ──────────────────────────────────────────────────── */
+        function buildCriteria() {
+            const container = document.getElementById("criteria-container");
+            CRITERIA.forEach(c => {
+                const el = document.createElement("div");
+                el.className = "criterion";
+                el.id = "crit-" + c.id;
 
-function buildCriteria() {
-    const container = document.getElementById("criteria-container");
-    CRITERIA.forEach(c => {
-        const el = document.createElement("div");
-        el.className = "criterion";
-        el.id = "crit-" + c.id;
+                const gridClass = c.optional ? "options-grid-4" : "options-grid";
+                const weightPct = Math.round(c.weight * 100);
+                const hintHtml = c.hint ? `<div class="crit-hint">${c.hint}</div>` : "";
 
-        const gridClass = c.optional ? "options-grid-4" : "options-grid";
-        const weightPct = Math.round(c.weight * 100);
-        const hintHtml  = c.hint ? `<div class="crit-hint">${c.hint}</div>` : "";
-
-        const optsHtml = c.options.map(o => `
+                const optsHtml = c.options.map(o => `
             <button class="opt" id="opt-${c.id}-${o.val}" onclick="pick('${c.id}','${o.val}')">
                 <div class="opt-dot dot-${o.val}"></div>
                 <div class="opt-label label-${o.val}">${o.label}</div>
@@ -747,7 +1070,7 @@ function buildCriteria() {
             </button>
         `).join("");
 
-        el.innerHTML = `
+                el.innerHTML = `
             <div class="crit-header">
                 <div class="crit-icon">${c.icon}</div>
                 <div style="flex:1">
@@ -758,297 +1081,419 @@ function buildCriteria() {
             </div>
             <div class="${gridClass}">${optsHtml}</div>
         `;
-        container.appendChild(el);
-    });
-}
-
-/* ─── Pick ──────────────────────────────────────────────────────── */
-
-function pick(cid, val) {
-    state[cid] = val;
-    document.getElementById("crit-" + cid).className = "criterion selected-" + val;
-    ["G", "A", "R", "N"].forEach(v => {
-        const btn = document.getElementById("opt-" + cid + "-" + v);
-        if (btn) btn.className = "opt" + (v === val ? " active-" + v : "");
-    });
-    updateProgress();
-    document.getElementById("val-msg").style.display = "none";
-
-    // Live: if user types after seeing the comment error, clear it
-    clearCommentError();
-}
-
-/* ─── Progress bar ──────────────────────────────────────────────── */
-
-function updateProgress() {
-    const filled = CRITERIA.filter(c => state[c.id] !== null).length;
-    const pct    = Math.round((filled / CRITERIA.length) * 100);
-    const bar    = document.getElementById("progress-fill");
-    bar.style.width = pct + "%";
-
-    const reds   = CRITERIA.filter(c => state[c.id] === "R").length;
-    const greens = CRITERIA.filter(c => state[c.id] === "G").length;
-    bar.style.background = reds >= 2
-        ? "var(--red-mid)"
-        : greens === CRITERIA.length ? "var(--green-mid)" : "var(--accent)";
-}
-
-/* ─── Weighted score ────────────────────────────────────────────── */
-
-/*
- * Only criteria with val ∈ {G, A, R} are scored (N/D excluded).
- * Weights of scored criteria are renormalized to sum to 1.0
- * so that N/D doesn't penalize the score.
- *
- * Points per option:  G = 1.0,  A = 0.5,  R = 0.0
- * weighted_score = Σ (points_i × weight_i) / Σ weight_i   → [0, 1]
- * final_score    = round(weighted_score × 100)             → [0, 100]
- */
-function calcScore() {
-    const pts = { G: 1.0, A: 0.5, R: 0.0 };
-    const scored = CRITERIA.filter(c => state[c.id] !== null && state[c.id] !== "N");
-    if (scored.length === 0) return 0;
-
-    const totalWeight  = scored.reduce((s, c) => s + c.weight, 0);
-    const weightedSum  = scored.reduce((s, c) => s + pts[state[c.id]] * c.weight, 0);
-    return Math.round((weightedSum / totalWeight) * 100);
-}
-
-/* ─── Overall RAG ───────────────────────────────────────────────── */
-
-function overallStatus() {
-    const scored = CRITERIA.filter(c => state[c.id] !== null && state[c.id] !== "N");
-    const counts = { G: 0, A: 0, R: 0 };
-    scored.forEach(c => counts[state[c.id]]++);
-
-    if (counts.R >= 2 || (counts.R >= 1 && counts.A >= 2)) return "R";
-    if (counts.R === 1 || counts.A >= 2)                   return "A";
-    return "G";
-}
-
-/* ─── Comment validation helpers ────────────────────────────────── */
-
-function clearCommentError() {
-    document.getElementById("comment-wrap").classList.remove("required-error");
-    document.getElementById("comment-error-msg").classList.remove("visible");
-}
-
-function showCommentError() {
-    const wrap = document.getElementById("comment-wrap");
-    wrap.classList.add("required-error");
-    document.getElementById("comment-error-msg").classList.add("visible");
-    wrap.scrollIntoView({ behavior: "smooth", block: "center" });
-}
-
-// Show/hide the "required" badge next to the label reactively as criteria change
-function syncCommentBadge(status) {
-    const badge = document.getElementById("comment-required-badge");
-    if (status === "R") {
-        badge.classList.add("visible");
-    } else {
-        badge.classList.remove("visible");
-        clearCommentError();
-    }
-}
-
-/* ─── Calculate ─────────────────────────────────────────────────── */
-
-function calculate() {
-    // 1. All required criteria must be filled
-    const missing = CRITERIA.filter(c => !c.optional && state[c.id] === null);
-    if (missing.length > 0) {
-        document.getElementById("val-msg").style.display = "block";
-        return;
-    }
-
-    const status  = overallStatus();
-    const comment = document.getElementById("pm-comment").value.trim();
-
-    // 2. Comment required when status is RED
-    syncCommentBadge(status);
-    if (status === "R" && comment === "") {
-        showCommentError();
-        return;
-    }
-
-    clearCommentError();
-
-    // ── Counts for pills ─────────────────────────────────────────
-    const counts = { G: 0, A: 0, R: 0, N: 0 };
-    CRITERIA.forEach(c => { if (state[c.id]) counts[state[c.id]]++; });
-
-    const score = calcScore();
-
-    // ── Config per status ────────────────────────────────────────
-    const config = {
-        G: { title: "Status: DOBRY",     sub: "Projekt pod pełną kontrolą. Kontynuuj realizację wg planu.",                    bg: "var(--green-bg)", border: "var(--green-border)", textCol: "var(--green-text)", circleBg: "#C0E0B8", barColor: "var(--green-mid)", symbol: "✓" },
-        A: { title: "Status: UWAGA",     sub: "Istnieją obszary wymagające aktywnego monitorowania i działań.",                bg: "var(--amber-bg)", border: "var(--amber-border)", textCol: "var(--amber-text)", circleBg: "#F7D9A0", barColor: "var(--amber-mid)", symbol: "!" },
-        R: { title: "Status: ZAGROŻONY", sub: "Wymagane natychmiastowe działania i eskalacja do sponsora.",                   bg: "var(--red-bg)",   border: "var(--red-border)",   textCol: "var(--red-text)",   circleBg: "#F0AEAE", barColor: "var(--red-mid)",   symbol: "✕" }
-    };
-
-    const cfg  = config[status];
-    const card = document.getElementById("result-card");
-    card.style.background  = cfg.bg;
-    card.style.borderColor = cfg.border;
-
-    // Circle
-    const circle = document.getElementById("res-circle");
-    circle.style.background = cfg.circleBg;
-    circle.style.color      = cfg.textCol;
-    circle.textContent      = cfg.symbol;
-
-    // Title / sub
-    document.getElementById("res-title").style.color = cfg.textCol;
-    document.getElementById("res-title").textContent = cfg.title;
-    document.getElementById("res-sub").style.color   = cfg.textCol;
-    document.getElementById("res-sub").textContent   = cfg.sub;
-
-    // Score badge
-    document.getElementById("score-number").textContent    = score;
-    document.getElementById("score-number").style.color    = cfg.textCol;
-    document.getElementById("score-label").style.color     = cfg.textCol;
-    document.getElementById("score-bar-fill").style.width  = score + "%";
-    document.getElementById("score-bar-fill").style.background = cfg.barColor;
-
-    // Pills — RAG counts
-    const pills  = document.getElementById("res-pills");
-    pills.innerHTML = "";
-    const pilCfg = {
-        G: { dot: "var(--green-mid)", label: "Zielone",     cls: "pill-G" },
-        A: { dot: "var(--amber-mid)", label: "Żółte",       cls: "pill-A" },
-        R: { dot: "var(--red-mid)",   label: "Czerwone",    cls: "pill-R" },
-        N: { dot: "var(--na-mid)",    label: "Nie dotyczy", cls: "pill-N" }
-    };
-    ["G", "A", "R", "N"].forEach(v => {
-        if (counts[v] > 0) {
-            const p = document.createElement("div");
-            p.className = "pill " + pilCfg[v].cls;
-            p.innerHTML = `<span class="pill-dot" style="background:${pilCfg[v].dot}"></span>${counts[v]} × ${pilCfg[v].label}`;
-            pills.appendChild(p);
+                container.appendChild(el);
+            });
         }
-    });
 
-    // Score pill
-    const sp = document.createElement("div");
-    sp.className = "pill";
-    sp.style.cssText = "background:rgba(61,107,142,0.12);color:var(--accent)";
-    sp.innerHTML = `<span class="pill-dot" style="background:var(--accent)"></span>Wynik: ${score} / 100`;
-    pills.appendChild(sp);
+        /* ─── Pick ──────────────────────────────────────────────────────── */
 
-    document.getElementById("res-div").style.background = cfg.textCol;
-    const btn = document.getElementById("btn-copy");
-    btn.style.borderColor = cfg.textCol;
-    btn.style.color       = cfg.textCol;
+        function pick(cid, val) {
+            state[cid] = val;
+            document.getElementById("crit-" + cid).className = "criterion selected-" + val;
+            ["G", "A", "R", "N"].forEach(v => {
+                const btn = document.getElementById("opt-" + cid + "-" + v);
+                if (btn) btn.className = "opt" + (v === val ? " active-" + v : "");
+            });
+            updateProgress();
+            document.getElementById("val-msg").style.display = "none";
 
-    card.classList.add("visible");
-    card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            // Live: if user types after seeing the comment error, clear it
+            clearCommentError();
+        }
 
-    // Risks
-    const risks    = generateRisks();
-    const riskList = document.getElementById("risk-list");
-    riskList.innerHTML = "";
-    risks.forEach(r => {
-        const li = document.createElement("li");
-        li.innerHTML = `
+        /* ─── Progress bar ──────────────────────────────────────────────── */
+
+        function updateProgress() {
+            const filled = CRITERIA.filter(c => state[c.id] !== null).length;
+            const pct = Math.round((filled / CRITERIA.length) * 100);
+            const bar = document.getElementById("progress-fill");
+            bar.style.width = pct + "%";
+
+            const reds = CRITERIA.filter(c => state[c.id] === "R").length;
+            const greens = CRITERIA.filter(c => state[c.id] === "G").length;
+            bar.style.background = reds >= 2 ?
+                "var(--red-mid)" :
+                greens === CRITERIA.length ? "var(--green-mid)" : "var(--accent)";
+        }
+
+        /* ─── Weighted score ────────────────────────────────────────────── */
+
+        /*
+         * Only criteria with val ∈ {G, A, R} are scored (N/D excluded).
+         * Weights of scored criteria are renormalized to sum to 1.0
+         * so that N/D doesn't penalize the score.
+         *
+         * Points per option:  G = 1.0,  A = 0.5,  R = 0.0
+         * weighted_score = Σ (points_i × weight_i) / Σ weight_i   → [0, 1]
+         * final_score    = round(weighted_score × 100)             → [0, 100]
+         */
+        function calcScore() {
+            const pts = {
+                G: 1.0,
+                A: 0.5,
+                R: 0.0
+            };
+            const scored = CRITERIA.filter(c => state[c.id] !== null && state[c.id] !== "N");
+            if (scored.length === 0) return 0;
+
+            const totalWeight = scored.reduce((s, c) => s + c.weight, 0);
+            const weightedSum = scored.reduce((s, c) => s + pts[state[c.id]] * c.weight, 0);
+            return Math.round((weightedSum / totalWeight) * 100);
+        }
+
+        /* ─── Overall RAG ───────────────────────────────────────────────── */
+
+        function overallStatus() {
+            const scored = CRITERIA.filter(c => state[c.id] !== null && state[c.id] !== "N");
+            const counts = {
+                G: 0,
+                A: 0,
+                R: 0
+            };
+            scored.forEach(c => counts[state[c.id]]++);
+
+            if (counts.R >= 2 || (counts.R >= 1 && counts.A >= 2)) return "R";
+            if (counts.R === 1 || counts.A >= 2) return "A";
+            return "G";
+        }
+
+        /* ─── Comment validation helpers ────────────────────────────────── */
+
+        function clearCommentError() {
+            document.getElementById("comment-wrap").classList.remove("required-error");
+            document.getElementById("comment-error-msg").classList.remove("visible");
+        }
+
+        function showCommentError() {
+            const wrap = document.getElementById("comment-wrap");
+            wrap.classList.add("required-error");
+            document.getElementById("comment-error-msg").classList.add("visible");
+            wrap.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        // Show/hide the "required" badge next to the label reactively as criteria change
+        function syncCommentBadge(status) {
+            const badge = document.getElementById("comment-required-badge");
+            if (status === "R") {
+                badge.classList.add("visible");
+            } else {
+                badge.classList.remove("visible");
+                clearCommentError();
+            }
+        }
+
+        /* ─── Calculate ─────────────────────────────────────────────────── */
+
+        function calculate() {
+            // 1. All required criteria must be filled
+            const missing = CRITERIA.filter(c => !c.optional && state[c.id] === null);
+            if (missing.length > 0) {
+                document.getElementById("val-msg").style.display = "block";
+                return;
+            }
+
+            const status = overallStatus();
+            const comment = document.getElementById("pm-comment").value.trim();
+
+            // 2. Comment required when status is RED
+            syncCommentBadge(status);
+            if (status === "R" && comment === "") {
+                showCommentError();
+                return;
+            }
+
+            clearCommentError();
+
+            // ── Counts for pills ─────────────────────────────────────────
+            const counts = {
+                G: 0,
+                A: 0,
+                R: 0,
+                N: 0
+            };
+            CRITERIA.forEach(c => {
+                if (state[c.id]) counts[state[c.id]]++;
+            });
+
+            const score = calcScore();
+
+            // ── Config per status ────────────────────────────────────────
+            const config = {
+                G: {
+                    title: "Status: DOBRY",
+                    sub: "Projekt pod pełną kontrolą. Kontynuuj realizację wg planu.",
+                    bg: "var(--green-bg)",
+                    border: "var(--green-border)",
+                    textCol: "var(--green-text)",
+                    circleBg: "#C0E0B8",
+                    barColor: "var(--green-mid)",
+                    symbol: "✓"
+                },
+                A: {
+                    title: "Status: UWAGA",
+                    sub: "Istnieją obszary wymagające aktywnego monitorowania i działań.",
+                    bg: "var(--amber-bg)",
+                    border: "var(--amber-border)",
+                    textCol: "var(--amber-text)",
+                    circleBg: "#F7D9A0",
+                    barColor: "var(--amber-mid)",
+                    symbol: "!"
+                },
+                R: {
+                    title: "Status: ZAGROŻONY",
+                    sub: "Wymagane natychmiastowe działania i eskalacja do sponsora.",
+                    bg: "var(--red-bg)",
+                    border: "var(--red-border)",
+                    textCol: "var(--red-text)",
+                    circleBg: "#F0AEAE",
+                    barColor: "var(--red-mid)",
+                    symbol: "✕"
+                }
+            };
+
+            const cfg = config[status];
+            const card = document.getElementById("result-card");
+            card.style.background = cfg.bg;
+            card.style.borderColor = cfg.border;
+
+            // Circle
+            const circle = document.getElementById("res-circle");
+            circle.style.background = cfg.circleBg;
+            circle.style.color = cfg.textCol;
+            circle.textContent = cfg.symbol;
+
+            // Title / sub
+            document.getElementById("res-title").style.color = cfg.textCol;
+            document.getElementById("res-title").textContent = cfg.title;
+            document.getElementById("res-sub").style.color = cfg.textCol;
+            document.getElementById("res-sub").textContent = cfg.sub;
+
+            // Score badge
+            document.getElementById("score-number").textContent = score;
+            document.getElementById("score-number").style.color = cfg.textCol;
+            document.getElementById("score-label").style.color = cfg.textCol;
+            document.getElementById("score-bar-fill").style.width = score + "%";
+            document.getElementById("score-bar-fill").style.background = cfg.barColor;
+
+            // Pills — RAG counts
+            const pills = document.getElementById("res-pills");
+            pills.innerHTML = "";
+            const pilCfg = {
+                G: {
+                    dot: "var(--green-mid)",
+                    label: "Zielone",
+                    cls: "pill-G"
+                },
+                A: {
+                    dot: "var(--amber-mid)",
+                    label: "Żółte",
+                    cls: "pill-A"
+                },
+                R: {
+                    dot: "var(--red-mid)",
+                    label: "Czerwone",
+                    cls: "pill-R"
+                },
+                N: {
+                    dot: "var(--na-mid)",
+                    label: "Nie dotyczy",
+                    cls: "pill-N"
+                }
+            };
+            ["G", "A", "R", "N"].forEach(v => {
+                if (counts[v] > 0) {
+                    const p = document.createElement("div");
+                    p.className = "pill " + pilCfg[v].cls;
+                    p.innerHTML = `<span class="pill-dot" style="background:${pilCfg[v].dot}"></span>${counts[v]} × ${pilCfg[v].label}`;
+                    pills.appendChild(p);
+                }
+            });
+
+            // Score pill
+            const sp = document.createElement("div");
+            sp.className = "pill";
+            sp.style.cssText = "background:rgba(61,107,142,0.12);color:var(--accent)";
+            sp.innerHTML = `<span class="pill-dot" style="background:var(--accent)"></span>Wynik: ${score} / 100`;
+            pills.appendChild(sp);
+
+            document.getElementById("res-div").style.background = cfg.textCol;
+            const btn = document.getElementById("btn-copy");
+            btn.style.borderColor = cfg.textCol;
+            btn.style.color = cfg.textCol;
+
+            card.classList.add("visible");
+            card.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+            // Risks
+            const risks = generateRisks();
+            const riskList = document.getElementById("risk-list");
+            riskList.innerHTML = "";
+            risks.forEach(r => {
+                const li = document.createElement("li");
+                li.innerHTML = `
             <strong>${r.risk}</strong>
             <span style="font-size:12px;margin-left:6px">${PRIORITY_LABELS[r.priority]}</span><br>
             <span style="color:#6B6560">Konsekwencja:</span> ${r.impact}<br>
             <span style="color:#6B6560">Mitygacja:</span> ${r.mitigation}
         `;
-        riskList.appendChild(li);
-    });
-}
-
-/* ─── Risks ─────────────────────────────────────────────────────── */
-
-function generateRisks() {
-    let risks = [];
-    CRITERIA.forEach(c => {
-        const val = state[c.id];
-        if ((val === "A" || val === "R") && RISK_SUGGESTIONS[c.id]?.[val]) {
-            risks = risks.concat(RISK_SUGGESTIONS[c.id][val]);
+                riskList.appendChild(li);
+            });
         }
-    });
 
-    const overall = overallStatus();
-    if (overall === "R") {
-        risks.unshift({ risk: "Ryzyko niepowodzenia projektu",        impact: "Projekt może nie zostać dostarczony",  mitigation: "Natychmiastowy plan recovery + eskalacja",       priority: "blocker" });
-    } else if (overall === "A") {
-        risks.unshift({ risk: "Ryzyko pogorszenia statusu projektu",  impact: "Przejście do statusu czerwonego",      mitigation: "Zwiększony monitoring i szybkie działania",      priority: "blocker" });
-    }
+        /* ─── Risks ─────────────────────────────────────────────────────── */
 
-    const unique = {};
-    risks.forEach(r => { unique[r.risk] = r; });
-    return Object.values(unique);
-}
+        function generateRisks() {
+            let risks = [];
+            CRITERIA.forEach(c => {
+                const val = state[c.id];
+                if ((val === "A" || val === "R") && RISK_SUGGESTIONS[c.id]?.[val]) {
+                    risks = risks.concat(RISK_SUGGESTIONS[c.id][val]);
+                }
+            });
 
-/* ─── Report ────────────────────────────────────────────────────── */
+            const overall = overallStatus();
+            if (overall === "R") {
+                risks.unshift({
+                    risk: "Ryzyko niepowodzenia projektu",
+                    impact: "Projekt może nie zostać dostarczony",
+                    mitigation: "Natychmiastowy plan recovery + eskalacja",
+                    priority: "blocker"
+                });
+            } else if (overall === "A") {
+                risks.unshift({
+                    risk: "Ryzyko pogorszenia statusu projektu",
+                    impact: "Przejście do statusu czerwonego",
+                    mitigation: "Zwiększony monitoring i szybkie działania",
+                    priority: "blocker"
+                });
+            }
 
-function buildReport() {
-    const statusMap = { G: "🟢 DOBRY", A: "🟡 UWAGA", R: "🔴 ZAGROŻONY" };
-    const overall   = overallStatus();
-    const score     = calcScore();
+            const unique = {};
+            risks.forEach(r => {
+                unique[r.risk] = r;
+            });
+            return Object.values(unique);
+        }
 
-    const lines = [
-        "=== STATUS TYGODNIOWY PROJEKTU ===",
-        getWeekLabel(), "",
-        `OGÓLNY STATUS: ${statusMap[overall]}`,
-        `WYNIK (ważony): ${score} / 100`, ""
-    ];
+        /* ─── Report ────────────────────────────────────────────────────── */
 
-    CRITERIA.forEach(c => {
-        const v = state[c.id];
-        if (!v) return;
-        const dot      = v === "G" ? "🟢" : v === "A" ? "🟡" : v === "R" ? "🔴" : "⚪";
-        const optLabel = c.options.find(o => o.val === v).label;
-        const weightPct = Math.round(c.weight * 100);
-        lines.push(`${dot} ${c.name} (waga ${weightPct}%): ${optLabel}`);
-    });
+        function buildReport() {
+            const statusMap = {
+                G: "🟢 DOBRY",
+                A: "🟡 UWAGA",
+                R: "🔴 ZAGROŻONY"
+            };
+            const overall = overallStatus();
+            const score = calcScore();
 
-    const comment = document.getElementById("pm-comment").value.trim();
-    if (comment) lines.push("", "Komentarz PM:", comment);
+            const lines = [
+                "=== STATUS TYGODNIOWY PROJEKTU ===",
+                getWeekLabel(), "",
+                `OGÓLNY STATUS: ${statusMap[overall]}`,
+                `WYNIK (ważony): ${score} / 100`, ""
+            ];
 
-    return lines.join("\n");
-}
+            CRITERIA.forEach(c => {
+                const v = state[c.id];
+                if (!v) return;
+                const dot = v === "G" ? "🟢" : v === "A" ? "🟡" : v === "R" ? "🔴" : "⚪";
+                const optLabel = c.options.find(o => o.val === v).label;
+                const weightPct = Math.round(c.weight * 100);
+                lines.push(`${dot} ${c.name} (waga ${weightPct}%): ${optLabel}`);
+            });
 
-/* ─── Copy ──────────────────────────────────────────────────────── */
+            const comment = document.getElementById("pm-comment").value.trim();
+            if (comment) lines.push("", "Komentarz PM:", comment);
 
-function copyReport() {
-    navigator.clipboard.writeText(buildReport()).then(() => {
-        const btn  = document.getElementById("btn-copy");
-        const orig = btn.textContent;
-        btn.textContent = "Skopiowano ✓";
-        setTimeout(() => { btn.textContent = orig; }, 2500);
-    });
-}
+            return lines.join("\n");
+        }
 
-/* ─── Reset ─────────────────────────────────────────────────────── */
+        function buildJSONReport() {
+            const overall = overallStatus();
+            const score = calcScore();
 
-function resetAll() {
-    CRITERIA.forEach(c => {
-        state[c.id] = null;
-        document.getElementById("crit-" + c.id).className = "criterion";
-        ["G", "A", "R", "N"].forEach(v => {
-            const btn = document.getElementById("opt-" + c.id + "-" + v);
-            if (btn) btn.className = "opt";
-        });
-    });
-    document.getElementById("pm-comment").value = "";
-    document.getElementById("result-card").classList.remove("visible");
-    document.getElementById("val-msg").style.display = "none";
-    document.getElementById("progress-fill").style.width     = "0%";
-    document.getElementById("progress-fill").style.background = "var(--accent)";
-    document.getElementById("comment-required-badge").classList.remove("visible");
-    clearCommentError();
-}
+            const data = {
+                week: getWeekLabel(),
+                status: overall,
+                score: score,
+                criteria: {}
+            };
 
-/* ─── Clear comment error on typing ────────────────────────────── */
+            CRITERIA.forEach(c => {
+                data.criteria[c.id] = {
+                    name: c.name,
+                    weight: c.weight,
+                    value: state[c.id] || null,
+                    label: state[c.id] ?
+                        c.options.find(o => o.val === state[c.id]).label :
+                        null
+                };
+            });
 
-document.getElementById("pm-comment").addEventListener("input", clearCommentError);
+            const comment = document.getElementById("pm-comment").value.trim();
+            if (comment) data.comment = comment;
 
-/* ─── Init ──────────────────────────────────────────────────────── */
+            return JSON.stringify(data, null, 2);
+        }
 
-buildCriteria();
-</script>
+        function copyJSONReport() {
+            navigator.clipboard.writeText(buildJSONReport()).then(() => {
+                const btn = document.getElementById("btn-copy-json");
+                const orig = btn.textContent;
+                btn.textContent = "Skopiowano JSON ✓";
+                setTimeout(() => {
+                    btn.textContent = orig;
+                }, 2500);
+            });
+        }
+
+        /* ─── Copy ──────────────────────────────────────────────────────── */
+
+        function copyReport() {
+            navigator.clipboard.writeText(buildReport()).then(() => {
+                const btn = document.getElementById("btn-copy");
+                const orig = btn.textContent;
+                btn.textContent = "Skopiowano ✓";
+                setTimeout(() => {
+                    btn.textContent = orig;
+                }, 2500);
+            });
+        }
+
+        /* ─── Reset ─────────────────────────────────────────────────────── */
+
+        function resetAll() {
+            CRITERIA.forEach(c => {
+                state[c.id] = null;
+                document.getElementById("crit-" + c.id).className = "criterion";
+                ["G", "A", "R", "N"].forEach(v => {
+                    const btn = document.getElementById("opt-" + c.id + "-" + v);
+                    if (btn) btn.className = "opt";
+                });
+            });
+            document.getElementById("pm-comment").value = "";
+            document.getElementById("result-card").classList.remove("visible");
+            document.getElementById("val-msg").style.display = "none";
+            document.getElementById("progress-fill").style.width = "0%";
+            document.getElementById("progress-fill").style.background = "var(--accent)";
+            document.getElementById("comment-required-badge").classList.remove("visible");
+            clearCommentError();
+        }
+
+        /* ─── Clear comment error on typing ────────────────────────────── */
+
+        document.getElementById("pm-comment").addEventListener("input", clearCommentError);
+
+        /* ─── Init ──────────────────────────────────────────────────────── */
+
+        buildCriteria();
+    </script>
 </body>
+
 </html>
