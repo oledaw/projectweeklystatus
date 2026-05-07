@@ -1418,10 +1418,17 @@
             const overall = overallStatus();
             const score = calcScore();
 
+            const summaryMap = {
+                G: "Projekt realizowany zgodnie z planem. Brak istotnych zagrożeń.",
+                A: "Projekt wymaga zwiększonego monitoringu. Występują obszary ryzyka wymagające działań PM.",
+                R: "Projekt zagrożony. Wymagana eskalacja i plan recovery."
+            };
+            
             const data = {
                 week: getWeekLabel(),
                 status: overall,
                 score: score,
+                summary: summaryMap[overall],
                 criteria: {}
             };
 
