@@ -191,12 +191,6 @@
 
         .rp-icon { font-size: 13px; }
 
-        .rp-limit {
-            margin-left: auto;
-            font-size: 10px; font-weight: 400;
-            opacity: 0.65; text-transform: none; letter-spacing: 0;
-        }
-
         .rp-items { display: flex; flex-direction: column; gap: 6px; }
 
         .rp-item {
@@ -342,6 +336,9 @@
         .result-list li.type-suggestion { background: rgba(61,107,142,0.06); border-color: var(--accent); align-items: flex-start; }
         .result-list li.type-action { background: rgba(224,154,58,0.09); border-color: var(--amber-mid); }
         .result-list li .li-num { font-size: 11px; font-weight: 500; opacity: 0.5; flex-shrink: 0; padding-top: 2px; }
+
+        .risk-import-btn {margin-left: auto;border: 1px solid var(--border2);background: rgba(255,255,255,0.8);border-radius: 6px;padding: 4px 8px;font-size: 11px;cursor: pointer;transition: all 0.15s;}
+        .risk-import-btn:hover {background: white;}
 
         /* ── Mobile ───────────────────────────────────────────────────── */
         @media (max-width: 640px) {
@@ -586,7 +583,11 @@ function buildCriteria() {
                 <div class="rp rp-amber">
                     <div class="rp-header">
                         <span class="rp-icon">⚠️</span> Top Ryzyka
-                        <span class="rp-limit">maks. 3</span>
+                        <button type="button"
+                          class="risk-import-btn"
+                          onclick="pasteRiskFromClipboard()">
+                          📋 Wklej z JSON
+                        </button>
                     </div>
                     <div class="rp-items">
                         ${[1,2,3].map(i => `
@@ -602,7 +603,6 @@ function buildCriteria() {
                 <div class="rp rp-red">
                     <div class="rp-header">
                         <span class="rp-icon">⚡</span> Akcje
-                        <span class="rp-limit">maks. 3</span>
                     </div>
                     <div class="rp-items">
                         ${[1,2,3].map(i => `
@@ -944,6 +944,56 @@ function copyJSONReport() {
         btn.textContent = "Skopiowano JSON ✓";
         setTimeout(() => { btn.textContent = orig; }, 2500);
     });
+}
+
+async function pasteRiskFromClipboard() {
+    try {
+        const text = await navigator.clipboard.readText();
+
+        if (!text || !text.trim()) {
+            alert("Schowek jest pusty");
+            return;
+        }
+
+        const data = JSON.parse(text);
+
+        const riskText = `[${data.key}] ${data.title}`;
+        const actionText = data.mit || "";
+
+        // pierwsze wolne pole ryzyka
+        const riskIndex = riskInputs.findIndex(v => !v || !v.trim());
+
+        // pierwsze wolne pole akcji
+        const actionIndex = actionInputs.findIndex(v => !v || !v.trim());
+
+        if (riskIndex !== -1) {
+            riskInputs[riskIndex] = riskText;
+
+            const riskInput = document.getElementById(
+                `risk-input-${riskIndex + 1}`
+            );
+
+            if (riskInput) {
+                riskInput.value = riskText;
+            }
+        }
+
+        if (actionIndex !== -1) {
+            actionInputs[actionIndex] = actionText;
+
+            const actionInput = document.getElementById(
+                `action-input-${actionIndex + 1}`
+            );
+
+            if (actionInput) {
+                actionInput.value = actionText;
+            }
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("Nie udało się odczytać poprawnego JSON ze schowka");
+    }
 }
 
 /* ─── Reset ───────────────────────────────────────────────────────────────── */
